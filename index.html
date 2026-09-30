@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>김철수 포트폴리오</title>
+<meta name="description" content="정책 데이터 분석과 사회문제 연구를 중심으로 근거 기반 정책 대안을 설계하는 정책연구원 김철수의 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<meta property="og:title" content="김철수 | Policy Researcher">
+<meta property="og:description" content="데이터로 읽고, 근거로 설계합니다. 정책연구원 김철수의 포트폴리오">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#fcf8f4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0a09'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='%23fcf8f4' font-family='serif'%3E김%3C/text%3E%3C/svg%3E">
+<style>
+/* Layout: 모눈 위 종이 스크랩북. 종이(밝음) ↔ 먹(어두움) 섹션 반전으로만 대비를 만들고,
+   강조는 굵기·색 대신 손그림(타원·밑줄·별)으로 "펜으로 표시"한다. 단일 테마(종이)로 고정. */
+:root {
+  color-scheme: light;
+  --paper-50: #fcf8f4;
+  --paper-100: #f4f0ea;
+  --paper-200: #ebe5dc;
+  --paper-300: #d9d2c7;
+  --ink-900: #0b0a09;
+  --ink-800: #1d1b18;
+  --ink-600: #4a4540;
+  --ink-400: #8b847b;
+  --on-ink: #f7f2ea;
+  --on-ink-soft: rgba(247, 242, 234, .68);
+  --grid-line: rgba(120, 100, 80, .09);
+  --tape: #2b2926;
+
+  --font-display: "Instrument Serif", "Nanum Myeongjo", Georgia, serif;
+  --font-body: "Manrope", "Noto Sans KR", system-ui, sans-serif;
+  --font-hand: "Gochi Hand", "Nanum Pen Script", cursive;
+
+  --fs-display: clamp(2.5rem, 1.3rem + 4.4vw, 4.8rem);
+  --fs-h2: clamp(2rem, 1.2rem + 3vw, 3.5rem);
+  --fs-h3: clamp(1.5rem, 1.15rem + 1.3vw, 2.2rem);
+  --fs-body: .95rem;
+  --fs-small: .8rem;
+
+  --container: 1120px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --shadow-paper: 0 1px 0 rgba(0,0,0,.04), 0 18px 40px -18px rgba(40,30,20,.35);
+  --dot: 1px dotted rgba(20,18,16,.6);
+  --dash: 1px dashed rgba(20,18,16,.5);
+  --dash-ink: 1px dashed rgba(247,242,234,.35);
+
+  --ease-out: cubic-bezier(.22,1,.36,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --noise-ink: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  margin: 0;
+  background-color: var(--paper-50);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-x: clip;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.container { width: min(100% - var(--gutter) * 2, var(--container)); margin-inline: auto; }
+.display { font-family: var(--font-display); font-weight: 400; letter-spacing: -.02em; line-height: 1.08; margin: 0; text-wrap: balance; }
+.eyebrow { font-family: var(--font-hand); font-size: 1.15rem; display: block; margin-bottom: .5rem; letter-spacing: .02em; }
+.lead { color: var(--ink-600); max-width: 60ch; margin: 16px 0 0; }
+.head { text-align: center; }
+.head .lead { margin-inline: auto; }
+.h2 { font-size: var(--fs-h2); }
+
+/* 종이·먹 질감 */
+.paper {
+  position: relative;
+  background-color: var(--paper-100);
+  background-image: radial-gradient(rgba(0,0,0,.05) 1px, transparent 1.2px), var(--noise);
+  background-size: 14px 14px, 220px 220px;
+}
+.paper--crumpled {
+  background-image:
+    radial-gradient(ellipse at 18% 28%, rgba(255,255,255,.6), transparent 42%),
+    radial-gradient(ellipse at 78% 70%, rgba(0,0,0,.05), transparent 46%),
+    radial-gradient(rgba(0,0,0,.05) 1px, transparent 1.2px), var(--noise);
+  background-size: auto, auto, 14px 14px, 220px 220px;
+}
+.paper--200 { background-color: var(--paper-200); }
+.ink {
+  background-color: var(--ink-900);
+  background-image: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,.06), transparent 50%), var(--noise-ink);
+  color: var(--on-ink);
+}
+.ink .lead { color: var(--on-ink-soft); }
+
+/* 손그림 공통 */
+.doodle { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.draw path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.draw-on-load path { animation: draw 1.3s var(--ease-out) both; animation-delay: var(--d, .6s); }
+.pre .draw path, .draw.pre path { stroke-dashoffset: 1; }
+.draw path { transition: stroke-dashoffset 1.1s cubic-bezier(.65,0,.35,1) var(--d, 0s); }
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+/* 스크롤 진입 — 기본 상태는 보이는 상태, JS가 화면 밖 요소에만 .pre를 붙임 */
+[data-reveal] { transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); transition-delay: var(--d, 0s); }
+[data-reveal].pre { opacity: 0; transform: translateY(32px) rotate(var(--r-pre, 0deg)); }
+
+/* 찢어진 가장자리 */
+.torn { position: absolute; left: 0; width: 100%; height: 26px; pointer-events: none; display: block; }
+.torn--top { top: -25px; }
+.torn--bottom { bottom: -25px; transform: scaleY(-1); }
+.torn path { fill: var(--ink-900); }
+
+/* ---------- 버튼 ---------- */
+.pencil { --h: 44px; position: relative; display: inline-flex; align-items: center; height: var(--h); font-family: var(--font-hand); font-size: 1.1rem; color: var(--on-ink); transition: transform .42s var(--ease-spring); }
+.pencil__eraser { width: 14px; height: var(--h); border: 1.5px solid var(--ink-900); border-right: 0; border-radius: 8px 0 0 8px; background: var(--paper-50); }
+.pencil__body { height: var(--h); display: flex; align-items: center; padding: 0 22px; background: var(--ink-900); transition: padding .42s var(--ease-out); }
+.pencil__tip { width: 0; height: 0; border-top: calc(var(--h) / 2) solid transparent; border-bottom: calc(var(--h) / 2) solid transparent; border-left: 22px solid var(--ink-900); position: relative; }
+.pencil__tip::after { content: ""; position: absolute; left: -9px; top: -4px; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 9px solid var(--paper-300); }
+.pencil:hover { transform: translateX(4px) rotate(-1.5deg); }
+.pencil:hover .pencil__body { padding-right: 32px; }
+.pencil:active { transform: translateX(2px) scale(.97); }
+.pencil--light { color: var(--ink-900); }
+.pencil--light .pencil__eraser { background: var(--ink-900); border-color: var(--on-ink); }
+.pencil--light .pencil__body { background: var(--on-ink); }
+.pencil--light .pencil__tip { border-left-color: var(--on-ink); }
+.pencil--light .pencil__tip::after { border-left-color: var(--ink-600); }
+
+.btn-box { display: inline-flex; align-items: center; padding: 7px 14px; background: var(--ink-900); color: var(--on-ink); font-family: var(--font-hand); font-size: 1.05rem; outline: 1.5px solid var(--ink-900); outline-offset: 3px; transition: outline-offset .18s var(--ease-out), background .18s; }
+.btn-box:hover { outline-offset: 1px; background: var(--ink-800); }
+
+.hand-link { position: relative; font-family: var(--font-hand); font-size: 1.1rem; display: inline-block; padding-bottom: 4px; }
+.hand-link svg { position: absolute; left: 0; bottom: -2px; width: 100%; height: 8px; }
+
+/* ---------- Nav ---------- */
+.nav { position: fixed; inset: 0 0 auto; z-index: 50; padding-top: env(safe-area-inset-top, 0px); transition: transform .42s var(--ease-out), background .42s, box-shadow .42s; }
+.nav--hidden { transform: translateY(-110%); }
+.nav--solid { background: rgba(252,248,244,.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 1px 0 var(--paper-300); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+.nav__logo { display: flex; align-items: baseline; gap: 10px; font-family: var(--font-display); font-size: 1.35rem; white-space: nowrap; }
+.nav__logo small { font-family: var(--font-hand); font-size: .95rem; color: var(--ink-400); }
+.nav__links { display: flex; gap: 24px; }
+.nav__link { position: relative; font-family: var(--font-hand); font-size: 1.08rem; padding-bottom: 2px; }
+.nav__link svg { position: absolute; left: -2px; bottom: -5px; width: calc(100% + 4px); height: 8px; opacity: 0; transition: opacity .2s; }
+.nav__link:hover svg, .nav__link[aria-current="true"] svg { opacity: 1; }
+.nav__burger { display: none; background: none; border: 0; padding: 8px; }
+.nav__drawer { position: fixed; top: calc(64px + env(safe-area-inset-top, 0px)); left: 0; right: 0; padding: 20px var(--gutter) 28px; display: grid; gap: 14px; font-family: var(--font-hand); font-size: 1.6rem; box-shadow: var(--shadow-paper); z-index: 49; }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 100px; padding-bottom: 56px; }
+.hero__sheet { position: relative; padding: 16px; box-shadow: var(--shadow-paper); animation: sheetIn 1s var(--ease-out) both; }
+@keyframes sheetIn { from { transform: translateY(40px) rotate(-1deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.hero__frame { border: var(--dot); }
+.hero__top { position: relative; padding: 56px 24px 48px; text-align: center; border-bottom: var(--dot); }
+.hero__pill { display: inline-block; border: 1px solid var(--ink-900); padding: 3px 14px; font-family: var(--font-hand); font-size: 1rem; margin-bottom: 22px; }
+.hero__title { font-size: var(--fs-display); max-width: 16ch; margin-inline: auto; line-height: 1.12; }
+.hero__title .w { display: inline-block; animation: wordIn .9s var(--ease-out) both; animation-delay: calc(.25s + var(--i) * 60ms); }
+@keyframes wordIn { from { opacity: 0; transform: translateY(.5em); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+.mark { position: relative; display: inline-block; }
+.mark svg { position: absolute; left: -4%; bottom: -.08em; width: 108%; height: .28em; overflow: visible; }
+.hero__name { margin: 26px 0 0; font-family: var(--font-display); font-size: clamp(1.25rem, 1rem + .8vw, 1.6rem); }
+.hero__name i { color: var(--ink-400); }
+.hero__lead { max-width: 58ch; margin: 14px auto 30px; color: var(--ink-600); }
+.hero__cta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px 32px; }
+.hero__doodle { position: absolute; width: 96px; color: var(--ink-900); }
+.hero__doodle--l { left: 28px; top: 34px; transform: rotate(-6deg); }
+.hero__doodle--r { right: 28px; top: 40px; transform: rotate(5deg); }
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; padding: 28px; }
+.stat { position: relative; padding: 16px 20px 20px; border: 1px solid rgba(0,0,0,.35); background: rgba(255,255,255,.25); }
+.stat__num { position: relative; display: grid; place-items: center; height: 100px; font-family: var(--font-display); font-size: 2.7rem; font-variant-numeric: tabular-nums; }
+.stat__num small { font-size: 1.1rem; margin-left: 4px; }
+.stat__num svg { position: absolute; inset: 4px 8%; width: 84%; height: calc(100% - 8px); overflow: visible; }
+.stat__label { display: flex; gap: 8px; align-items: baseline; font-family: var(--font-display); font-size: 1.2rem; line-height: 1.25; margin-top: 8px; }
+.stat__label::before { content: ""; flex: 0 0 6px; height: 6px; border-radius: 50%; background: var(--ink-900); transform: translateY(-3px); }
+.stat p { margin: 6px 0 0 14px; font-size: var(--fs-small); color: var(--ink-600); }
+
+/* ---------- 키워드 스트립 ---------- */
+.strip { position: relative; margin: 48px 0 64px; padding: 34px 0 32px; }
+.strip__title { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 20px; display: flex; gap: 22px; align-items: center; justify-content: center; }
+.strip__title svg { width: 44px; height: 16px; flex: none; }
+.marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee__track { display: flex; gap: 44px; width: max-content; animation: marquee 36s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.kw { display: flex; align-items: center; gap: 44px; white-space: nowrap; font-family: var(--font-display); font-size: 1.6rem; }
+.kw::after { content: "✳"; font-size: .9rem; color: var(--on-ink-soft); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Contact 카드 ---------- */
+.contact { padding: 24px 0 96px; position: relative; }
+.card-note { max-width: 620px; margin-inline: auto; position: relative; padding: 36px clamp(18px, 4vw, 44px) 36px; background: var(--paper-50); border: 1px solid var(--paper-300); box-shadow: var(--shadow-paper); }
+.card-note::before { content: ""; position: absolute; top: -14px; left: 50%; width: 110px; height: 28px; transform: translateX(-50%) rotate(-2deg); background: rgba(217,210,199,.75); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.contact__side { position: absolute; top: 50%; width: 110px; color: var(--ink-900); }
+.contact__side--l { left: max(0px, calc(50% - 460px)); transform: translateY(-50%) rotate(-8deg); }
+.contact__side--r { right: max(0px, calc(50% - 460px)); transform: translateY(-50%) rotate(7deg); }
+.clist { list-style: none; margin: 24px 0 0; padding: 0; border: var(--dot); }
+.clist li { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: var(--dot); }
+.clist li:last-child { border-bottom: 0; }
+.clist__k { font-family: var(--font-hand); font-size: 1.1rem; color: var(--ink-600); }
+.clist__v { font-family: var(--font-display); font-size: 1.25rem; overflow-wrap: anywhere; user-select: all; }
+.clist__v a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.copy { border: 1px solid var(--ink-900); background: transparent; padding: 3px 10px; font-family: var(--font-hand); font-size: .95rem; transition: background .18s, color .18s; }
+.copy:hover { background: var(--ink-900); color: var(--on-ink); }
+.contact__note { margin: 16px 0 0; font-size: var(--fs-small); color: var(--ink-400); text-align: center; }
+
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; background: var(--ink-900); color: var(--on-ink); font-family: var(--font-hand); font-size: 1.1rem; padding: 8px 18px; pointer-events: none; transition: opacity .3s, transform .3s var(--ease-out); z-index: 60; }
+.toast--on { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Profile ---------- */
+.profile { padding: 40px 0 110px; }
+.profile__grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.profile__sheet { padding: clamp(28px, 4vw, 48px); box-shadow: var(--shadow-paper); }
+.profile__body { margin: 22px 0 0; color: var(--ink-600); max-width: 62ch; }
+.profile__body p { margin: 0 0 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.chip { border: var(--dot); padding: 4px 12px; font-size: .78rem; font-weight: 600; background: rgba(255,255,255,.45); }
+.polaroid { position: relative; background: #fffdf9; padding: 14px 14px 64px; box-shadow: 0 30px 50px -24px rgba(40,30,20,.5), 0 1px 0 rgba(0,0,0,.06); max-width: 340px; margin-inline: auto; transform: rotate(var(--rot, -6deg)); transition: transform .2s linear; }
+.polaroid__cap { position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font-family: var(--font-hand); font-size: 1.3rem; }
+.polaroid__pin { position: absolute; top: -12px; left: 50%; width: 22px; height: 22px; border-radius: 50%; transform: translateX(-50%); background: radial-gradient(circle at 35% 35%, #6b6560, var(--ink-900) 70%); box-shadow: 0 4px 6px rgba(0,0,0,.35); }
+.photo { position: relative; aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; background: linear-gradient(160deg, #5c5750, #25221f 70%); }
+.photo__mono { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(5rem, 3rem + 6vw, 8rem); color: rgba(247,242,234,.88); }
+.photo__hint { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: var(--font-hand); color: rgba(247,242,234,.6); font-size: .95rem; }
+.photo__wrap { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; background:
+  linear-gradient(115deg, transparent 20%, rgba(255,255,255,.3) 22%, transparent 26%),
+  linear-gradient(60deg, transparent 55%, rgba(255,255,255,.22) 57%, transparent 61%),
+  linear-gradient(160deg, transparent 70%, rgba(255,255,255,.2) 72%, transparent 76%); }
+
+/* ---------- Experience (sticky stack) ---------- */
+.exp { padding: 20px 0 80px; }
+.exp__panel { padding: 44px var(--gutter) 28px; box-shadow: var(--shadow-paper); max-width: 980px; }
+.exp__list { position: relative; margin-top: 8px; }
+.case-wrap { position: sticky; top: calc(88px + var(--i) * 16px); padding-top: 30px; }
+.case { position: relative; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 40px); padding: 36px clamp(18px, 3vw, 40px); box-shadow: var(--shadow-paper); max-width: 920px; margin-left: var(--off, 0); transform-origin: 50% 0; will-change: transform; }
+.case__period { display: inline-block; border: var(--dot); padding: 3px 12px; font-size: .78rem; font-weight: 700; font-variant-numeric: tabular-nums; background: rgba(255,255,255,.45); }
+.case__org { font-size: var(--fs-h3); margin-top: 14px; }
+.case__role { position: relative; display: inline-block; font-family: var(--font-display); font-size: 1.3rem; padding-bottom: 8px; margin-top: 6px; }
+.case__role svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 8px; }
+.case__desc { color: var(--ink-600); margin: 16px 0 0; }
+.case__tasks { border-left: 1.5px solid var(--ink-900); padding-left: 18px; margin-top: 22px; }
+.case__tasks h4 { font-family: var(--font-hand); font-weight: 400; font-size: 1.15rem; margin: 0 0 6px; }
+.case__tasks ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font-size: .86rem; }
+.case__tasks li { display: flex; gap: 10px; }
+.case__tasks li::before { content: "—"; color: var(--ink-400); }
+.folder { position: relative; align-self: stretch; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; padding: 26px 24px; color: var(--on-ink); overflow: hidden; }
+.folder__tab { position: absolute; top: 0; left: 24px; font-family: var(--font-hand); font-size: .95rem; background: var(--paper-300); color: var(--ink-900); padding: 2px 14px 4px; }
+.folder__years { font-family: var(--font-display); font-size: clamp(2.6rem, 2rem + 2.2vw, 3.8rem); line-height: 1; margin-top: 26px; font-variant-numeric: tabular-nums; }
+.folder__years span { display: block; color: var(--on-ink-soft); font-size: .55em; margin: 6px 0; font-family: var(--font-hand); }
+.folder__foot { display: flex; justify-content: space-between; align-items: end; gap: 12px; }
+.folder__foot b { font-family: var(--font-hand); font-weight: 400; font-size: 1.2rem; }
+.folder__doodle { width: 78px; color: var(--on-ink); flex: none; }
+.folder__clip { position: absolute; top: -8px; right: 22px; width: 28px; color: #a8a29a; }
+
+/* ---------- Skills ---------- */
+.skills { padding: 100px 0 0; position: relative; background: linear-gradient(to bottom, transparent 64%, var(--ink-900) 64%); }
+.skills__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin-top: 56px; padding-bottom: 110px; }
+.pcard { position: relative; padding: 70px 26px 34px; box-shadow: var(--shadow-paper); transform: rotate(var(--rot)); transition: transform .5s var(--ease-spring), box-shadow .5s, opacity .9s var(--ease-out); }
+.pcard.pre { opacity: 0; transform: translateY(-60px) rotate(calc(var(--rot) * 4)); }
+.pcard:hover { transform: rotate(0deg) translateY(-10px); box-shadow: 0 30px 60px -20px rgba(0,0,0,.5); }
+.pcard__tape { position: absolute; top: 18px; left: 22px; background: var(--tape); color: var(--on-ink); font-family: var(--font-hand); font-size: 1.05rem; padding: 4px 22px 5px 16px; clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%, 4% 50%); }
+.pcard__icon { position: absolute; top: 14px; right: 18px; width: 84px; height: 84px; color: var(--ink-900); }
+.pcard h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.75rem; line-height: 1.2; margin: 44px 0 10px; text-wrap: balance; }
+.pcard p { font-size: .85rem; color: var(--ink-600); margin: 14px 0 0; }
+.stars { display: inline-flex; gap: 3px; vertical-align: middle; }
+.stars svg { width: 22px; height: 22px; }
+.stars .on { fill: currentColor; }
+.stars path { stroke: currentColor; stroke-width: 1.3; stroke-linejoin: round; }
+.stars .off { fill: none; opacity: .55; }
+.score { font-family: var(--font-hand); font-size: 1.05rem; margin-left: 10px; color: var(--ink-400); }
+
+/* ---------- Education (binder) ---------- */
+.edu { padding: 20px 0 120px; }
+.edu .head .lead { color: var(--on-ink-soft); }
+.svc { position: sticky; top: 84px; margin-top: 44px; display: grid; grid-template-columns: 44px minmax(0, 1fr) 56px; color: var(--ink-900); box-shadow: 0 -20px 50px -30px rgba(0,0,0,.6), var(--shadow-paper); }
+.svc__gutter { border-right: var(--dash); display: flex; flex-direction: column; align-items: center; gap: 44px; padding: 24px 0; }
+.svc__hole { width: 10px; height: 10px; border-radius: 50%; background: var(--ink-900); box-shadow: inset 0 1px 2px rgba(255,255,255,.2); }
+.svc__gutter--r { border-right: 0; border-left: var(--dash); padding: 18px 0; justify-content: flex-start; font-family: var(--font-hand); font-size: 1.1rem; writing-mode: vertical-rl; letter-spacing: .1em; }
+.svc__head { border-bottom: var(--dash); padding: 10px; text-align: center; font-family: var(--font-hand); font-size: 1.05rem; }
+.svc__title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 24px; padding: 28px clamp(16px, 3vw, 40px); border-bottom: 1px solid var(--paper-300); }
+.svc__title .display { font-size: var(--fs-h2); }
+.svc__school { font-family: var(--font-display); font-size: 1.45rem; margin: 6px 0 0; }
+.svc__period { font-family: var(--font-hand); font-size: 1.15rem; border-left: 1.5px solid var(--ink-900); padding-left: 12px; font-variant-numeric: tabular-nums; }
+.svc__body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 20px 48px; padding: 30px clamp(16px, 3vw, 40px) 40px; }
+.svc__meta { display: grid; gap: 10px; align-content: start; font-size: .86rem; margin: 0; }
+.svc__meta div { display: grid; grid-template-columns: 70px 1fr; gap: 8px; border-bottom: var(--dot); padding-bottom: 8px; }
+.svc__meta dt { font-family: var(--font-hand); font-size: 1.05rem; color: var(--ink-600); }
+.svc__meta dd { margin: 0; font-weight: 600; }
+.svc__desc { margin: 0; color: var(--ink-600); }
+
+/* ---------- Languages ---------- */
+.lang { padding: 100px 0 80px; }
+.table { margin: 44px auto 0; max-width: 860px; border: var(--dot); background: var(--paper-50); box-shadow: var(--shadow-paper); }
+.trow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 110px; border-bottom: var(--dot); }
+.trow:last-child { border-bottom: 0; }
+.trow > * { padding: 20px 22px; display: flex; align-items: center; gap: 12px; }
+.trow > * + * { border-left: var(--dot); }
+.trow--head > * { font-family: var(--font-hand); font-size: 1.1rem; color: var(--ink-600); padding-block: 12px; }
+.trow__lang { font-family: var(--font-display); font-size: 1.6rem; }
+.trow__score { justify-content: center; font-family: var(--font-display); font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+.trow:not(.trow--head):hover { background: rgba(0,0,0,.025); }
+
+/* ---------- Closing (envelope) ---------- */
+.closing { position: relative; margin-top: 90px; padding: 110px 0 40px; overflow: hidden; }
+.env { position: relative; max-width: 720px; margin-inline: auto; padding-top: 40px; }
+.letter { position: relative; z-index: 2; width: 88%; margin-inline: auto; padding: clamp(26px, 4vw, 44px) clamp(26px, 4vw, 44px) 150px; color: var(--ink-900); box-shadow: var(--shadow-paper); transform: translateY(var(--rise, 0px)); }
+.letter__to { font-family: var(--font-hand); font-size: 1.2rem; color: var(--ink-600); }
+.letter h2 { font-size: var(--fs-h2); margin-top: 8px; }
+.letter p { color: var(--ink-600); margin: 16px 0 0; max-width: 56ch; }
+.letter__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 26px; }
+.sign { margin-top: 30px; display: flex; flex-direction: column; align-items: flex-end; }
+.sign__name { font-family: var(--font-hand); font-size: 2.2rem; line-height: 1; }
+.sign svg { width: 150px; height: 20px; color: var(--ink-900); }
+.sign small { font-size: var(--fs-small); color: var(--ink-400); }
+.env__pocket { position: relative; z-index: 3; margin-top: -120px; height: 190px; background: var(--paper-200); box-shadow: 0 -2px 0 rgba(0,0,0,.04), var(--shadow-paper); clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%); }
+.env__pocket::after { content: ""; position: absolute; inset: 0; background: linear-gradient(155deg, rgba(0,0,0,.06), transparent 40%), linear-gradient(-155deg, rgba(0,0,0,.06), transparent 40%); }
+.env__back { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 250px; background: var(--paper-300); }
+.env__flap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 250px; height: 160px; background: var(--paper-300); clip-path: polygon(0 100%, 50% 0, 100% 100%); transform-origin: 50% 100%; transform: rotateX(var(--flap, 0deg)); opacity: .96; }
+.footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 72px; padding-top: 22px; border-top: var(--dash-ink); font-size: var(--fs-small); color: var(--on-ink-soft); }
+.footer b { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; color: var(--on-ink); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  .skills__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skills__grid .pcard:last-child { grid-column: 1 / -1; max-width: calc(50% - 13px); justify-self: center; width: 100%; }
+  .svc__body { grid-template-columns: minmax(0, 1fr); }
+  .contact__side { display: none; }
+  .case { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+  .nav__links, .nav .btn-box { display: none; }
+  .nav__burger { display: block; }
+  .nav__logo small { display: none; }
+  .hero { padding-top: 84px; }
+  .hero__sheet { padding: 10px; }
+  .hero__top { padding: 40px 16px 34px; }
+  .hero__doodle { display: none; }
+  .stats { grid-template-columns: minmax(0, 1fr); padding: 18px; gap: 14px; }
+  .profile__grid { grid-template-columns: minmax(0, 1fr); }
+  .profile__grid .polaroid { order: -1; max-width: 260px; }
+  .case-wrap { position: relative; top: 0; }
+  .case { grid-template-columns: minmax(0, 1fr); margin-left: 0; transform: none !important; filter: none !important; }
+  .folder { order: -1; min-height: 190px; }
+  .skills { background: linear-gradient(to bottom, transparent 80%, var(--ink-900) 80%); }
+  .skills__grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .skills__grid .pcard:last-child { max-width: none; }
+  .pcard { --rot: 0deg !important; }
+  .svc { position: relative; top: 0; grid-template-columns: 28px minmax(0, 1fr); }
+  .svc__gutter--r { display: none; }
+  .svc__gutter { gap: 36px; }
+  .clist li { grid-template-columns: minmax(0, 1fr) auto; }
+  .clist__k { grid-column: 1 / -1; }
+  .trow { grid-template-columns: minmax(0, 1fr) 80px; }
+  .trow > :nth-child(2) { grid-column: 1 / -1; grid-row: 2; border-left: 0; border-top: var(--dot); padding-top: 12px; }
+  .trow--head > :nth-child(2) { display: none; }
+  .trow--head { grid-template-columns: minmax(0, 1fr) 80px; }
+  .letter { width: 94%; padding-bottom: 104px; }
+  .clist__v { font-size: 1.05rem; }
+  .env__pocket { height: 130px; margin-top: -80px; }
+  .env__back { height: 180px; }
+  .env__flap { bottom: 180px; height: 110px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-reveal].pre, .pcard.pre { opacity: 1; transform: rotate(var(--rot, 0deg)); }
+  .draw path { stroke-dashoffset: 0 !important; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="u-line" d="M2 5 C 40 2, 90 7, 140 4 S 190 3, 198 5" />
+  </defs>
+</svg>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="nav__logo" href="#top" aria-label="김철수 — 맨 위로">김철수 <small>policy researcher</small></a>
+    <nav class="nav__links" aria-label="주요 섹션">
+      <a class="nav__link" href="#profile">프로필<svg viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><use href="#u-line" class="doodle" /></svg></a>
+      <a class="nav__link" href="#experience">경력<svg viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><use href="#u-line" class="doodle" /></svg></a>
+      <a class="nav__link" href="#skills">역량<svg viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><use href="#u-line" class="doodle" /></svg></a>
+      <a class="nav__link" href="#education">학력<svg viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><use href="#u-line" class="doodle" /></svg></a>
+      <a class="nav__link" href="#languages">언어<svg viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><use href="#u-line" class="doodle" /></svg></a>
+    </nav>
+    <a class="btn-box" href="#contact">연락하기</a>
+    <button class="nav__burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">
+      <svg width="28" height="20" viewBox="0 0 28 20" aria-hidden="true"><path class="doodle" d="M2 3 C 10 2, 18 4, 26 3 M2 10 C 9 11, 19 9, 26 10 M2 17 C 12 16, 18 18, 26 17" /></svg>
+    </button>
+  </div>
+</header>
+<div class="nav__drawer paper" id="drawer" hidden>
+  <a href="#profile">프로필</a>
+  <a href="#experience">경력</a>
+  <a href="#skills">역량</a>
+  <a href="#education">학력</a>
+  <a href="#languages">언어</a>
+  <a href="#contact">연락하기 →</a>
+</div>
+
+<main id="top">
+<!-- ===================== HERO ===================== -->
+<section class="hero container" aria-labelledby="hero-title">
+  <div class="hero__sheet paper paper--crumpled">
+    <div class="hero__frame">
+      <div class="hero__top">
+        <!-- 손그림: 돋보기 + 막대그래프 -->
+        <svg class="hero__doodle hero__doodle--l draw draw-on-load" viewBox="0 0 100 100" aria-hidden="true" style="--d:.9s">
+          <path class="doodle" pathLength="1" d="M10 88 L 92 88 M14 90 L 14 12" />
+          <path class="doodle" pathLength="1" d="M24 86 L24 60 L34 60 L34 86 M42 86 L42 46 L52 46 L52 86 M60 86 L60 32 L70 32 L70 86" />
+          <path class="doodle" pathLength="1" d="M66 22 C 58 22, 54 28, 55 34 C 56 42, 66 45, 72 41 C 78 37, 78 27, 72 23 C 70 22, 68 22, 66 22 M76 42 L 88 56" />
+        </svg>
+        <!-- 손그림: 문서 + 펜 -->
+        <svg class="hero__doodle hero__doodle--r draw draw-on-load" viewBox="0 0 100 100" aria-hidden="true" style="--d:1.1s">
+          <path class="doodle" pathLength="1" d="M20 10 L 62 10 L 76 24 L 76 90 L 20 90 Z M62 10 L 62 24 L 76 24" />
+          <path class="doodle" pathLength="1" d="M30 40 C 42 39, 54 41, 66 40 M30 52 C 40 51, 56 53, 66 52 M30 64 C 38 63, 48 65, 56 64" />
+          <path class="doodle" pathLength="1" d="M58 84 L 90 46 L 96 52 L 64 90 L 56 92 Z" />
+        </svg>
+
+        <span class="hero__pill">정책연구원 · 서울</span>
+        <h1 class="display hero__title" id="hero-title">
+          <span class="w" style="--i:0">데이터로</span> <span class="w" style="--i:1">읽고,</span><br>
+          <span class="w mark" style="--i:2">근거로<svg class="draw draw-on-load" viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true" style="--d:1.2s"><path class="doodle" pathLength="1" d="M2 5 C 40 2, 90 7, 140 4 S 190 3, 198 5 M20 7 C 70 5, 120 6, 180 6" /></svg></span>
+          <span class="w" style="--i:3">설계합니다.</span>
+        </h1>
+        <p class="hero__name">김철수 <i>— Chulsoo Kim, Policy Researcher</i></p>
+        <p class="hero__lead">정책 데이터 분석과 사회문제 연구를 중심으로 전문성을 쌓아온 정책연구원입니다. 정량·정성 연구를 결합해 복잡한 사회 현상을 구조적으로 분석하고, 근거에 기반한 정책 대안을 설계합니다.</p>
+        <div class="hero__cta">
+          <a class="pencil" href="#contact"><span class="pencil__eraser" aria-hidden="true"></span><span class="pencil__body">연구 협업 문의</span><span class="pencil__tip" aria-hidden="true"></span></a>
+          <a class="hand-link" href="#experience">경력 살펴보기 ↓<svg viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><use href="#u-line" class="doodle" /></svg></a>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat__num"><span><span data-count="8">8</span><small>년+</small></span>
+            <svg class="draw draw-on-load" viewBox="0 0 240 100" preserveAspectRatio="none" aria-hidden="true" style="--d:1.3s"><path class="doodle" pathLength="1" d="M150 8 C 70 2, 12 22, 10 52 C 8 84, 80 96, 140 92 C 205 88, 236 66, 230 42 C 224 18, 180 6, 120 10 C 100 11, 90 14, 150 12" /></svg>
+          </div>
+          <div class="stat__label">정책연구 경력</div>
+          <p>2018년 3월부터 연구 현장에서 일해 왔습니다.</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num"><span><span data-count="3">3</span><small>곳</small></span>
+            <svg class="draw draw-on-load" viewBox="0 0 240 100" preserveAspectRatio="none" aria-hidden="true" style="--d:1.5s"><path class="doodle" pathLength="1" d="M90 10 C 160 2, 232 20, 230 50 C 228 82, 160 96, 100 92 C 40 88, 6 70, 12 44 C 18 18, 70 8, 130 9 C 150 10, 160 13, 96 14" /></svg>
+          </div>
+          <div class="stat__label">정책 연구기관</div>
+          <p>한국정책전략연구소 · 미래사회연구센터 · 공공정책리서치랩</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num"><span><span data-count="2">2</span><small>개</small></span>
+            <svg class="draw draw-on-load" viewBox="0 0 240 100" preserveAspectRatio="none" aria-hidden="true" style="--d:1.7s"><path class="doodle" pathLength="1" d="M140 6 C 60 4, 8 26, 12 54 C 16 86, 90 94, 150 90 C 210 86, 238 62, 228 38 C 218 14, 170 4, 110 8 C 96 9, 88 12, 146 11" /></svg>
+          </div>
+          <div class="stat__label">행정·정책 학위</div>
+          <p>서울대학교 정책학 석사 · 고려대학교 행정학 학사</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KEYWORD STRIP ===================== -->
+<section class="strip ink" aria-label="연구 방법 키워드">
+  <svg class="torn torn--top" viewBox="0 0 1000 30" preserveAspectRatio="none" aria-hidden="true"><path data-torn="7" /></svg>
+  <h2 class="strip__title">
+    <svg viewBox="0 0 44 16" aria-hidden="true"><path class="doodle" d="M2 8 C 14 6, 26 10, 40 8 M32 2 L 41 8 L 32 14" /></svg>
+    이렇게 연구합니다
+    <svg viewBox="0 0 44 16" aria-hidden="true" style="transform:scaleX(-1)"><path class="doodle" d="M2 8 C 14 6, 26 10, 40 8 M32 2 L 41 8 L 32 14" /></svg>
+  </h2>
+  <div class="marquee">
+    <div class="marquee__track" id="marquee">
+      <span class="kw">정책 분석</span><span class="kw">정책 평가</span><span class="kw">설문조사</span><span class="kw">통계·행정자료 분석</span><span class="kw">문헌 조사</span><span class="kw">이해관계자 인터뷰</span><span class="kw">국내외 정책 사례 조사</span><span class="kw">정책 브리프</span><span class="kw">연구보고서</span>
+    </div>
+  </div>
+  <svg class="torn torn--bottom" viewBox="0 0 1000 30" preserveAspectRatio="none" aria-hidden="true"><path data-torn="21" /></svg>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact container" id="contact" aria-labelledby="contact-title">
+  <svg class="contact__side contact__side--l" viewBox="0 0 100 100" aria-hidden="true">
+    <path class="doodle" d="M30 18 C 24 18, 18 24, 20 34 C 24 56, 44 76, 66 82 C 76 84, 82 78, 82 72 L 80 64 C 79 61, 76 60, 73 61 L 64 65 C 61 66, 58 65, 56 63 C 48 56, 42 50, 37 42 C 35 39, 35 36, 37 34 L 41 26 C 42 23, 41 20, 38 19 Z" />
+    <path class="doodle" d="M60 20 C 70 22, 78 30, 80 40 M58 30 C 64 31, 69 36, 70 42" />
+  </svg>
+  <svg class="contact__side contact__side--r" viewBox="0 0 100 100" aria-hidden="true">
+    <path class="doodle" d="M12 28 L 88 26 L 90 78 L 10 80 Z" />
+    <path class="doodle" d="M12 29 C 30 44, 40 52, 50 56 C 60 52, 72 42, 88 27 M11 79 L 40 52 M89 77 L 62 51" />
+  </svg>
+
+  <div class="card-note" data-reveal>
+    <div class="head">
+      <span class="eyebrow">contact</span>
+      <h2 class="display h2" id="contact-title">연구 협업, 편하게 연락주세요</h2>
+      <p class="lead">정책 연구 과제, 데이터 분석, 정책 보고서 작성 협업에 관한 문의를 기다립니다.</p>
+    </div>
+    <ul class="clist">
+      <li>
+        <span class="clist__k">전화번호</span>
+        <span class="clist__v"><a href="tel:01012341234" id="v-phone">010-1234-1234</a></span>
+        <button class="copy" type="button" data-copy="010-1234-1234">복사</button>
+      </li>
+      <li>
+        <span class="clist__k">이메일</span>
+        <span class="clist__v"><a href="mailto:chulsoo.kim@example.com">chulsoo.kim@example.com</a></span>
+        <button class="copy" type="button" data-copy="chulsoo.kim@example.com">복사</button>
+      </li>
+      <li>
+        <span class="clist__k">웹사이트</span>
+        <span class="clist__v"><a href="https://www.chulsoo-policy.com" target="_blank" rel="noopener">www.chulsoo-policy.com</a></span>
+        <span aria-hidden="true" class="clist__k">↗</span>
+      </li>
+      <li>
+        <span class="clist__k">거주지</span>
+        <span class="clist__v">Seoul, South Korea</span>
+        <span></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PROFILE ===================== -->
+<section class="profile container" id="profile" aria-labelledby="profile-title">
+  <div class="profile__grid">
+    <div class="profile__sheet paper" data-reveal>
+      <span class="eyebrow">profile</span>
+      <h2 class="display h2" id="profile-title">정량과 정성을 함께 읽는 연구자</h2>
+      <div class="profile__body">
+        <p>정책 데이터 분석과 사회문제 연구를 중심으로 전문성을 쌓아온 정책연구원입니다. 정량·정성 연구를 결합해 복잡한 사회 현상을 구조적으로 분석하고, 근거에 기반한 정책 대안을 설계하는 것을 목표로 합니다.</p>
+        <p>객관적인 자료와 다양한 이해관계자의 관점을 균형 있게 검토하는 연구 방식을 중요하게 생각합니다. 데이터 분석, 정책 보고서 작성, 이해관계자 인터뷰에 강점을 가지고 있으며 협업을 통해 실행 가능한 연구 결과를 만드는 데 집중합니다.</p>
+      </div>
+      <div class="chips" aria-label="강점">
+        <span class="chip">데이터 분석</span><span class="chip">정책 보고서 작성</span><span class="chip">이해관계자 인터뷰</span><span class="chip">정량·정성 연구 결합</span>
+      </div>
+    </div>
+    <!-- 사진 교체: .photo 안의 .photo__mono / .photo__hint 를 <img src="profile.jpg" alt="김철수"> 로 바꾸면 됩니다 -->
+    <figure class="polaroid" id="polaroid" style="margin:0">
+      <span class="polaroid__pin" aria-hidden="true"></span>
+      <div class="photo">
+        <div class="photo__mono" aria-hidden="true">김</div>
+        <div class="photo__hint" aria-hidden="true">photo</div>
+        <div class="photo__wrap" aria-hidden="true"></div>
+      </div>
+      <figcaption class="polaroid__cap">Chulsoo Kim · Seoul</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section class="exp container" id="experience" aria-labelledby="exp-title">
+  <div class="exp__panel paper" data-reveal>
+    <span class="eyebrow">work experience</span>
+    <h2 class="display h2" id="exp-title">연구 현장에서 보낸 8년</h2>
+    <p class="lead">기초조사와 문헌 검토에서 시작해 연구 기획과 정책 대안 도출까지, 정책 연구의 전 과정을 단계적으로 맡아 왔습니다.</p>
+  </div>
+
+  <div class="exp__list" id="cases">
+    <div class="case-wrap" style="--i:0">
+      <article class="case paper paper--crumpled" style="--off:0px">
+        <div>
+          <span class="case__period">2023/03 ~ 현재</span>
+          <h3 class="display case__org">한국정책전략연구소</h3>
+          <span class="case__role">선임연구원<svg class="draw" viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><path class="doodle" pathLength="1" d="M2 5 C 40 2, 90 7, 140 4 S 190 3, 198 5" /></svg></span>
+          <p class="case__desc">사회·경제 분야의 정책 연구 프로젝트를 기획하고 정량·정성 자료를 분석하는 업무를 담당했습니다. 설문조사와 통계자료, 문헌조사 및 이해관계자 인터뷰를 종합하여 정책 대안을 도출하고 연구보고서와 정책 브리프를 작성했습니다.</p>
+          <div class="case__tasks">
+            <h4>주요 업무</h4>
+            <ul><li>사회·경제 분야 정책 연구 프로젝트 기획</li><li>설문·통계·문헌·인터뷰 자료 종합 분석</li><li>정책 대안 도출, 연구보고서·정책 브리프 작성</li></ul>
+          </div>
+        </div>
+        <div class="folder ink">
+          <span class="folder__tab">senior researcher</span>
+          <svg class="folder__clip" viewBox="0 0 30 60" aria-hidden="true"><path class="doodle" d="M10 50 L 10 12 C 10 4, 22 4, 22 12 L 22 44 C 22 50, 15 50, 15 44 L 15 16" /></svg>
+          <div class="folder__years">2023<span>to</span>Now</div>
+          <div class="folder__foot">
+            <b>사회 · 경제</b>
+            <svg class="folder__doodle" viewBox="0 0 100 70" aria-hidden="true"><path class="doodle" d="M6 62 L 94 62 M10 56 C 24 50, 30 38, 44 40 C 56 42, 60 26, 72 22 C 80 19, 86 12, 92 8 M84 8 L 92 8 L 91 16" /></svg>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="case-wrap" style="--i:1">
+      <article class="case paper" style="--off:clamp(0px, 5vw, 70px)">
+        <div>
+          <span class="case__period">2020/07 ~ 2023/02</span>
+          <h3 class="display case__org">미래사회연구센터</h3>
+          <span class="case__role">정책연구원<svg class="draw" viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><path class="doodle" pathLength="1" d="M2 4 C 50 7, 100 2, 150 5 S 190 6, 198 4" /></svg></span>
+          <p class="case__desc">지역사회와 노동·복지 분야의 연구 프로젝트에 참여하여 국내외 정책 사례 조사, 데이터 정리 및 분석, 전문가 인터뷰를 수행했습니다. 연구 결과를 구조화하고 정책별 기대효과와 한계를 비교하여 연구진의 정책 제안 수립을 지원했습니다.</p>
+          <div class="case__tasks">
+            <h4>주요 업무</h4>
+            <ul><li>국내외 정책 사례 조사</li><li>데이터 정리·분석, 전문가 인터뷰</li><li>정책별 기대효과와 한계 비교, 정책 제안 지원</li></ul>
+          </div>
+        </div>
+        <div class="folder ink">
+          <span class="folder__tab">policy researcher</span>
+          <svg class="folder__clip" viewBox="0 0 30 60" aria-hidden="true"><path class="doodle" d="M10 50 L 10 12 C 10 4, 22 4, 22 12 L 22 44 C 22 50, 15 50, 15 44 L 15 16" /></svg>
+          <div class="folder__years">2020<span>to</span>2023</div>
+          <div class="folder__foot">
+            <b>지역사회 · 노동 · 복지</b>
+            <svg class="folder__doodle" viewBox="0 0 100 70" aria-hidden="true"><path class="doodle" d="M50 6 L 50 20 M22 20 L 78 20 M22 20 L 22 34 M50 20 L 50 34 M78 20 L 78 34 M12 34 L 32 34 L 32 50 L 12 50 Z M40 34 L 60 34 L 60 50 L 40 50 Z M68 34 L 88 34 L 88 50 L 68 50 Z" /></svg>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="case-wrap" style="--i:2">
+      <article class="case paper paper--200" style="--off:clamp(0px, 2vw, 28px)">
+        <div>
+          <span class="case__period">2018/03 ~ 2020/06</span>
+          <h3 class="display case__org">공공정책리서치랩</h3>
+          <span class="case__role">연구원<svg class="draw" viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><path class="doodle" pathLength="1" d="M2 5 C 40 3, 90 6, 140 4 S 190 5, 198 3" /></svg></span>
+          <p class="case__desc">공공정책 관련 기초조사와 문헌 검토를 담당하고 각종 통계자료와 행정자료를 연구 목적에 맞게 정리했습니다. 정책 동향 자료와 연구보고서 초안을 작성하고 연구회의 및 자문회의 운영을 지원하며 정책 연구의 전 과정을 경험했습니다.</p>
+          <div class="case__tasks">
+            <h4>주요 업무</h4>
+            <ul><li>공공정책 기초조사·문헌 검토</li><li>통계·행정자료 정리</li><li>정책 동향 자료·보고서 초안 작성, 연구·자문회의 운영 지원</li></ul>
+          </div>
+        </div>
+        <div class="folder ink">
+          <span class="folder__tab">researcher</span>
+          <svg class="folder__clip" viewBox="0 0 30 60" aria-hidden="true"><path class="doodle" d="M10 50 L 10 12 C 10 4, 22 4, 22 12 L 22 44 C 22 50, 15 50, 15 44 L 15 16" /></svg>
+          <div class="folder__years">2018<span>to</span>2020</div>
+          <div class="folder__foot">
+            <b>공공정책 기초조사</b>
+            <svg class="folder__doodle" viewBox="0 0 100 70" aria-hidden="true"><path class="doodle" d="M18 60 L 18 14 C 30 10, 42 12, 50 18 C 58 12, 70 10, 82 14 L 82 60 C 70 56, 58 58, 50 64 C 42 58, 30 56, 18 60 Z M50 18 L 50 64 M26 26 C 32 25, 38 26, 43 28 M26 36 C 32 35, 38 36, 43 38 M57 28 C 62 26, 68 25, 74 26 M57 38 C 62 36, 68 35, 74 36" /></svg>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section class="skills" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="head" data-reveal>
+      <span class="eyebrow">skills</span>
+      <h2 class="display h2" id="skills-title">핵심 역량</h2>
+      <p class="lead">연구 설계부터 분석, 보고서 작성까지 한 과제를 끝까지 책임지는 데 필요한 세 가지 역량입니다.</p>
+    </div>
+    <div class="skills__grid">
+      <article class="pcard paper paper--200" style="--rot:-2.4deg" data-reveal>
+        <span class="pcard__tape">analysis</span>
+        <svg class="pcard__icon" viewBox="0 0 100 100" aria-hidden="true"><path class="doodle" d="M40 14 C 22 14, 12 28, 14 44 C 16 60, 32 70, 48 66 C 64 62, 72 46, 66 30 C 62 20, 52 14, 40 14 M62 60 L 86 86 M26 48 L 36 36 L 44 44 L 56 28" /></svg>
+        <h3>정책 분석 및 정책평가</h3>
+        <div><span class="stars" data-stars="5"></span><span class="score">5 / 5</span></div>
+        <p>정책별 기대효과와 한계를 비교하고, 근거에 기반한 정책 대안을 도출합니다.</p>
+      </article>
+      <article class="pcard paper" style="--rot:1.8deg; --d:.12s" data-reveal>
+        <span class="pcard__tape">data</span>
+        <svg class="pcard__icon" viewBox="0 0 100 100" aria-hidden="true"><path class="doodle" d="M12 88 L 90 88 M16 90 L 16 10 M24 70 L 36 52 L 50 60 L 66 34 L 84 22 M76 20 L 85 21 L 84 30 M24 84 L 24 76 M36 84 L 36 70 M50 84 L 50 74 M66 84 L 66 64" /></svg>
+        <h3>통계·데이터 분석</h3>
+        <div><span class="stars" data-stars="4"></span><span class="score">4 / 5</span></div>
+        <p>설문조사·통계자료·행정자료를 연구 목적에 맞게 정리하고 정량 분석합니다.</p>
+      </article>
+      <article class="pcard paper paper--crumpled" style="--rot:-1.2deg; --d:.24s" data-reveal>
+        <span class="pcard__tape">writing</span>
+        <svg class="pcard__icon" viewBox="0 0 100 100" aria-hidden="true"><path class="doodle" d="M18 10 L 60 10 L 74 24 L 74 90 L 18 90 Z M60 10 L 60 24 L 74 24 M28 38 C 40 37, 52 39, 64 38 M28 50 C 38 49, 54 51, 64 50 M28 62 C 36 61, 46 63, 54 62 M52 80 C 58 72, 62 84, 68 76 C 72 72, 76 78, 82 74" /></svg>
+        <h3>정책 보고서 및 연구보고서 작성</h3>
+        <div><span class="stars" data-stars="5"></span><span class="score">5 / 5</span></div>
+        <p>연구 결과를 구조화해 연구보고서, 정책 브리프, 정책 동향 자료로 정리합니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section class="edu ink" id="education" aria-labelledby="edu-title">
+  <div class="container">
+    <div class="head" data-reveal>
+      <span class="eyebrow">education</span>
+      <h2 class="display h2" id="edu-title">행정학에서 정책학으로</h2>
+      <p class="lead">행정·정책학의 기초 이론 위에 정책분석과 조사방법론을 더해 근거 기반 연구 역량을 다졌습니다.</p>
+    </div>
+
+    <article class="svc paper" aria-labelledby="edu-ms">
+      <div class="svc__gutter" aria-hidden="true"><span class="svc__hole"></span><span class="svc__hole"></span><span class="svc__hole"></span><span class="svc__hole"></span><span class="svc__hole"></span></div>
+      <div>
+        <div class="svc__head">석사 · master's degree</div>
+        <div class="svc__title">
+          <div>
+            <h3 class="display" id="edu-ms">정책학 석사</h3>
+            <p class="svc__school">서울대학교</p>
+          </div>
+          <span class="svc__period">2016/03 ~ 2018/02</span>
+        </div>
+        <div class="svc__body">
+          <dl class="svc__meta">
+            <div><dt>대학원</dt><dd>행정대학원</dd></div>
+            <div><dt>전공</dt><dd>정책학</dd></div>
+            <div><dt>중점</dt><dd>정책분석 · 정책평가 · 조사방법론 · 통계분석</dd></div>
+          </dl>
+          <p class="svc__desc">정책분석, 정책평가, 조사방법론과 통계분석을 중심으로 연구하며 근거 기반 정책연구에 필요한 분석 역량을 개발했습니다.</p>
+        </div>
+      </div>
+      <div class="svc__gutter svc__gutter--r" aria-hidden="true">2016 — 2018</div>
+    </article>
+
+    <article class="svc paper paper--200" aria-labelledby="edu-ba">
+      <div class="svc__gutter" aria-hidden="true"><span class="svc__hole"></span><span class="svc__hole"></span><span class="svc__hole"></span><span class="svc__hole"></span><span class="svc__hole"></span></div>
+      <div>
+        <div class="svc__head">학사 · bachelor's degree</div>
+        <div class="svc__title">
+          <div>
+            <h3 class="display" id="edu-ba">행정학 학사</h3>
+            <p class="svc__school">고려대학교</p>
+          </div>
+          <span class="svc__period">2012/03 ~ 2016/02</span>
+        </div>
+        <div class="svc__body">
+          <dl class="svc__meta">
+            <div><dt>전공</dt><dd>행정학</dd></div>
+            <div><dt>중점</dt><dd>공공문제 분석 · 행정조직 · 정책과정 · 사회조사 방법</dd></div>
+          </dl>
+          <p class="svc__desc">행정학과 정책학의 기초 이론을 학습하고 공공문제 분석, 행정조직, 정책과정 및 사회조사 방법에 관한 기반 지식을 쌓았습니다.</p>
+        </div>
+      </div>
+      <div class="svc__gutter svc__gutter--r" aria-hidden="true">2012 — 2016</div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== LANGUAGES ===================== -->
+<section class="lang container" id="languages" aria-labelledby="lang-title">
+  <div class="head" data-reveal>
+    <span class="eyebrow">languages</span>
+    <h2 class="display h2" id="lang-title">언어</h2>
+    <p class="lead">국내외 정책 사례와 문헌을 직접 읽고 조사합니다.</p>
+  </div>
+  <div class="table" role="table" aria-label="언어 능력" data-reveal>
+    <div class="trow trow--head" role="row"><span role="columnheader">언어</span><span role="columnheader">숙련도</span><span role="columnheader" style="justify-content:center">점수</span></div>
+    <div class="trow" role="row"><span class="trow__lang" role="cell">한국어</span><span role="cell"><span class="stars" data-stars="5"></span></span><span class="trow__score" role="cell">5 / 5</span></div>
+    <div class="trow" role="row"><span class="trow__lang" role="cell">영어</span><span role="cell"><span class="stars" data-stars="4"></span></span><span class="trow__score" role="cell">4 / 5</span></div>
+    <div class="trow" role="row"><span class="trow__lang" role="cell">일본어</span><span role="cell"><span class="stars" data-stars="3"></span></span><span class="trow__score" role="cell">3 / 5</span></div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="closing ink" id="closing" aria-labelledby="closing-title">
+  <svg class="torn torn--top" viewBox="0 0 1000 30" preserveAspectRatio="none" aria-hidden="true"><path data-torn="33" /></svg>
+  <div class="container">
+    <div class="env" id="env">
+      <div class="env__flap" aria-hidden="true"></div>
+      <div class="env__back" aria-hidden="true"></div>
+      <div class="letter paper">
+        <span class="letter__to">읽어주셔서 감사합니다,</span>
+        <h2 class="display" id="closing-title">실행 가능한 연구를 함께 만들고 싶습니다</h2>
+        <p>객관적인 자료와 다양한 이해관계자의 관점을 균형 있게 검토하고, 협업을 통해 실행 가능한 연구 결과를 만드는 데 집중합니다. 정책 연구 과제나 데이터 분석 협업이 필요하시면 연락주세요.</p>
+        <div class="letter__actions">
+          <a class="pencil" href="mailto:chulsoo.kim@example.com"><span class="pencil__eraser" aria-hidden="true"></span><span class="pencil__body">chulsoo.kim@example.com</span><span class="pencil__tip" aria-hidden="true"></span></a>
+          <a class="hand-link" href="#contact">연락처 전체 보기 ↑<svg viewBox="0 0 200 8" preserveAspectRatio="none" aria-hidden="true"><use href="#u-line" class="doodle" /></svg></a>
+        </div>
+        <div class="sign">
+          <span class="sign__name">김철수</span>
+          <svg class="draw" viewBox="0 0 150 20" preserveAspectRatio="none" aria-hidden="true"><path class="doodle" pathLength="1" d="M4 12 C 30 4, 50 18, 76 10 C 96 4, 116 16, 146 6" /></svg>
+          <small>Policy Researcher · Seoul</small>
+        </div>
+      </div>
+      <div class="env__pocket" aria-hidden="true"></div>
+    </div>
+
+    <footer class="footer">
+      <b>김철수</b>
+      <span>010-1234-1234 · chulsoo.kim@example.com · Seoul, South Korea</span>
+      <span>© <span id="year">2026</span> Chulsoo Kim</span>
+    </footer>
+  </div>
+</section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var yEl = document.getElementById('year'); if (yEl) yEl.textContent = new Date().getFullYear();
+
+  /* 찢어진 가장자리: 시드 기반 폴리곤 */
+  function seeded(seed) { var s = seed; return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
+  document.querySelectorAll('[data-torn]').forEach(function (p) {
+    var r = seeded(+p.getAttribute('data-torn')), d = 'M0 30 ', n = 90;
+    for (var i = 0; i <= n; i++) { var x = (i / n) * 1000, y = 30 - (6 + r() * 18) + (i % 7 === 0 ? r() * 6 : 0); d += 'L' + x.toFixed(1) + ' ' + y.toFixed(1) + ' '; }
+    p.setAttribute('d', d + 'L1000 30 Z');
+  });
+
+  /* 손그림 별 */
+  function starPath(seed) {
+    var r = seeded(seed), pts = [];
+    for (var i = 0; i < 10; i++) {
+      var a = -Math.PI / 2 + i * Math.PI / 5, rad = (i % 2 ? 4.4 : 10) + (r() - .5) * 1.2;
+      pts.push((12 + Math.cos(a) * rad).toFixed(1) + ' ' + (12.5 + Math.sin(a) * rad).toFixed(1));
+    }
+    return 'M' + pts.join(' L') + ' Z';
+  }
+  var sseed = 3;
+  document.querySelectorAll('[data-stars]').forEach(function (el) {
+    var n = +el.getAttribute('data-stars'), html = '';
+    for (var i = 0; i < 5; i++) html += '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="' + (i < n ? 'on' : 'off') + '" d="' + starPath(sseed++) + '"/></svg>';
+    el.innerHTML = html; el.setAttribute('role', 'img'); el.setAttribute('aria-label', '5점 만점에 ' + n + '점');
+  });
+
+  /* 마퀴: 트랙 복제 */
+  var track = document.getElementById('marquee');
+  if (track) { track.innerHTML += track.innerHTML.replace(/class="kw"/g, 'class="kw" aria-hidden="true"'); }
+
+  /* 스크롤 진입 — 화면 밖에 있는 요소만 숨겼다가 진입 시 표시 */
+  var targets = document.querySelectorAll('[data-reveal], .draw:not(.draw-on-load)');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove('pre'); io.unobserve(e.target); } });
+    }, { threshold: .25, rootMargin: '0px 0px -8% 0px' });
+    targets.forEach(function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight * .92) { el.classList.add('pre'); io.observe(el); }
+    });
+  }
+
+  /* 수치 카운트업 */
+  if (!reduce) document.querySelectorAll('[data-count]').forEach(function (el) {
+    var to = +el.getAttribute('data-count'), t0 = null, dur = 1400;
+    el.textContent = '0';
+    function step(t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * e); if (p < 1) requestAnimationFrame(step); }
+    setTimeout(function () { requestAnimationFrame(step); }, 900);
+  });
+
+  /* 내비: 아래로 숨김/위로 표시, 40px 이후 배경 */
+  var nav = document.getElementById('nav'), lastY = window.scrollY, drawer = document.getElementById('drawer'), burger = document.getElementById('burger');
+  function closeDrawer() { drawer.hidden = true; burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', '메뉴 열기'); }
+  burger.addEventListener('click', function () {
+    var open = drawer.hidden; drawer.hidden = !open;
+    burger.setAttribute('aria-expanded', String(open)); burger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    nav.classList.remove('nav--hidden');
+  });
+  drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+
+  /* 현재 섹션 표시 */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav__link'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+
+  /* 스크롤 연동: 경력 카드 스택, 폴라로이드 회전, 봉투 */
+  var cases = Array.prototype.slice.call(document.querySelectorAll('.case-wrap'));
+  var pol = document.getElementById('polaroid'), env = document.getElementById('env');
+  var ticking = false;
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  function onScroll() {
+    var y = window.scrollY, vh = window.innerHeight, wide = window.innerWidth > 767;
+    nav.classList.toggle('nav--solid', y > 40);
+    if (drawer.hidden) nav.classList.toggle('nav--hidden', y > lastY && y > 160);
+    lastY = y;
+
+    var cur = -1;
+    sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < vh * .4) cur = i; });
+    links.forEach(function (a, i) { a.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+
+    if (reduce) return;
+    cases.forEach(function (w, i) {
+      var card = w.firstElementChild, next = cases[i + 1];
+      if (!wide || !next) { card.style.transform = ''; card.style.filter = ''; return; }
+      var a = w.getBoundingClientRect(), b = next.getBoundingClientRect();
+      var p = clamp(1 - (b.top - a.top) / a.height, 0, 1);
+      card.style.transform = 'scale(' + (1 - .08 * p).toFixed(3) + ')';
+      card.style.filter = 'brightness(' + (1 - .2 * p).toFixed(3) + ')';
+    });
+
+    if (pol) {
+      var r = pol.getBoundingClientRect(), pp = clamp(1 - (r.top + r.height / 2) / vh, 0, 1);
+      pol.style.setProperty('--rot', (-10 + 18 * pp).toFixed(2) + 'deg');
+    }
+    if (env) {
+      var er = env.getBoundingClientRect(), ep = clamp((vh - er.top) / (vh * .7), 0, 1);
+      env.style.setProperty('--rise', ((1 - ep) * 140).toFixed(1) + 'px');
+      env.style.setProperty('--flap', ((1 - ep) * 180).toFixed(1) + 'deg');
+    }
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { onScroll(); ticking = false; }); } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* 복사 버튼 */
+  var toast = document.getElementById('toast'), tTimer;
+  function showToast(msg) { toast.textContent = msg; toast.classList.add('toast--on'); clearTimeout(tTimer); tTimer = setTimeout(function () { toast.classList.remove('toast--on'); }, 1800); }
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      function fallback() {
+        var v = btn.parentElement.querySelector('.clist__v'); var sel = window.getSelection(), rg = document.createRange();
+        rg.selectNodeContents(v); sel.removeAllRanges(); sel.addRange(rg);
+        showToast('선택했습니다. Ctrl/⌘+C로 복사하세요');
+      }
+      try {
+        navigator.clipboard.writeText(text).then(function () { showToast('복사했습니다: ' + text); }, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
